@@ -1,0 +1,38 @@
+# OSの一時ファイル
+.DS_Store
+Thumbs.db
+
+# キャッシュファイル
+*.swp
+*.swo
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# 依存関係のあるディレクトリ
+/node_modules
+/bower_components
+
+# コンパイルされたファイル
+*.min.*
+*.css.map
+*.js.map
+
+# IDEやエディタによる設定ファイル
+.idea
+.vscode
+*.sublime-*
+
+# テストファイル
+/coverage
+/.*.swp
+test-*
+
+# その他の一時ファイル
+*.bak
+*.tmp
+*.orig
+*.swp
