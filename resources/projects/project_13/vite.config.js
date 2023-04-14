@@ -9,6 +9,7 @@ export default {
     host: true,
     port: 8888, // 任意のポート番号を書く
   },
+  assetsInclude: ["**/*.obj"],
   build: {
     manifest: false,
     outDir: "../../../docs/project_13",
