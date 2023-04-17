@@ -14,6 +14,13 @@ class App {
   private controls: OrbitControls;
   private resizer: Resizer;
   private gui: void;
+  private amplitude = 0.1; // 上下の揺れ度合い
+  private initPosition = {
+    x: -3,
+    y: 9,
+    z: -5,
+  };
+  private easing = 0.002;
 
   constructor() {
     this.scene = new THREE.Scene();
@@ -26,20 +33,23 @@ class App {
       0.1,
       1000
     );
-    this.camera.position.x = -0.5;
-    this.camera.position.y = 2;
-    this.camera.position.z = -1.3;
+    this.camera.position.set(
+      this.initPosition.x,
+      this.initPosition.y,
+      this.initPosition.z
+    );
+    this.camera.lookAt(0, 0, 0); // カメラの初期視点
 
     // light
-    this.light = new THREE.PointLight(0xffffff, 1.5, 100, 1.0);
-    this.light.position.x = 0;
-    this.light.position.y = 2;
+    this.light = new THREE.PointLight(0xffffff, 1.5, 150, 1.0);
+    this.light.position.x = -3;
+    this.light.position.y = 10;
     this.light.position.z = 0;
     this.scene.add(this.light);
 
     // axis
-    this.axis = new THREE.AxesHelper(100);
-    this.scene.add(this.axis);
+    // this.axis = new THREE.AxesHelper(100);
+    // this.scene.add(this.axis);
 
     // renderer
     this.renderer = new THREE.WebGLRenderer();
@@ -88,6 +98,8 @@ class App {
           }
         });
 
+        object.scale.set(5, 5, 5);
+
         this.scene.add(object);
       });
     });
@@ -97,6 +109,11 @@ class App {
     requestAnimationFrame(() => this.animate());
     // カメラコントローラーを更新
     this.controls.update();
+
+    // カメラのy軸の位置をサイン波で変化させる
+    this.camera.position.y =
+      Math.sin(Date.now() * this.easing) * this.amplitude + this.initPosition.y;
+
     this.renderer.render(this.scene, this.camera);
   }
 }
