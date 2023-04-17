@@ -20,3 +20,6 @@
 ```:powershell
 add vite.config.tsを追加
 ```
+
+## View works
+https://ryuga0719.github.io/stu-interactive/
