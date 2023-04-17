@@ -4,6 +4,9 @@ import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader.js";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader.js";
 import { Resizer } from "./Resizer";
 import { setGui } from "./Gui";
+import roomAreaMtl from "../roomArea/roomArea.mtl?url";
+import roomAreaJpg from "../roomArea/roomArea.jpg";
+import roomAreaObj from "../roomArea/roomArea.obj?url";
 
 class App {
   private scene: THREE.Scene;
@@ -84,17 +87,15 @@ class App {
 
   private loadObjMtl(): void {
     const mtlLoader = new MTLLoader();
-    mtlLoader.load("src/assets/roomArea/roomArea.mtl", (materials) => {
+    mtlLoader.load(roomAreaMtl, (materials) => {
       materials.preload();
       const objLoader = new OBJLoader();
       objLoader.setMaterials(materials);
 
-      objLoader.load("src/assets/roomArea/roomArea.obj", (object) => {
+      objLoader.load(roomAreaObj, (object) => {
         object.traverse((child) => {
           if (child instanceof THREE.Mesh) {
-            child.material.map = new THREE.TextureLoader().load(
-              "src/assets/roomArea/roomArea.jpg"
-            );
+            child.material.map = new THREE.TextureLoader().load(roomAreaJpg);
           }
         });
 

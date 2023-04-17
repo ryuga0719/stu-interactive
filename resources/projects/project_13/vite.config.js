@@ -9,17 +9,20 @@ export default {
     host: true,
     port: 8888, // 任意のポート番号を書く
   },
-  assetsInclude: ["**/*.obj"],
+  assetsInclude: ["**/*.obj", "**/*.mtl"],
   build: {
     manifest: false,
     outDir: "../../../docs/project_13",
-    assetsDir: "./assets",
+    assetsDir: "./src/assets",
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
           let extType = assetInfo.name.split(".").at(1);
-          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+          if (/png|jpg|jpeg|svg|gif|tiff|bmp|ico/i.test(extType)) {
             extType = "img";
+          }
+          if (/mtl|obj/i.test(extType)) {
+            extType = "roomArea";
           }
           return `assets/${extType}/[name][extname]`;
         },
