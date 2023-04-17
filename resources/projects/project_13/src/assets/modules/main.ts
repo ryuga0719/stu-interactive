@@ -9,6 +9,7 @@ import roomAreaJpg from "../roomArea/roomArea.jpg";
 import roomAreaObj from "../roomArea/roomArea.obj?url";
 
 class App {
+  private canvas: HTMLElement;
   private scene: THREE.Scene;
   private camera: THREE.PerspectiveCamera;
   private light: THREE.PointLight;
@@ -16,8 +17,8 @@ class App {
   // private axis: THREE.AxesHelper;
   private controls: OrbitControls;
   private resizer: Resizer;
-  private gui: void;
-  private amplitude = 0.1; // 上下の揺れ度合い
+  // private gui: void;
+  private amplitude = 0.3; // 上下の揺れ度合い
   private initPosition = {
     x: -3,
     y: 9,
@@ -26,6 +27,7 @@ class App {
   private easing = 0.002;
 
   constructor() {
+    this.canvas = document.getElementById("canvas") as HTMLElement;
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0x000000);
 
@@ -55,7 +57,7 @@ class App {
     // this.scene.add(this.axis);
 
     // renderer
-    this.renderer = new THREE.WebGLRenderer();
+    this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(this.renderer.domElement);
 
@@ -73,16 +75,16 @@ class App {
     this.animate();
 
     // Gui
-    this.gui = setGui(
-      this.camera,
-      this.camera.position.x,
-      this.camera.position.y,
-      this.camera.position.z,
-      this.light,
-      this.light.position.x,
-      this.light.position.y,
-      this.light.position.z
-    );
+    // this.gui = setGui(
+    //   this.camera,
+    //   this.camera.position.x,
+    //   this.camera.position.y,
+    //   this.camera.position.z,
+    //   this.light,
+    //   this.light.position.x,
+    //   this.light.position.y,
+    //   this.light.position.z
+    // );
   }
 
   private loadObjMtl(): void {
@@ -111,7 +113,7 @@ class App {
     // カメラコントローラーを更新
     this.controls.update();
 
-    // カメラのy軸の位置をサイン波で変化させる
+    // カメラの上下遷移
     this.camera.position.y =
       Math.sin(Date.now() * this.easing) * this.amplitude + this.initPosition.y;
 
