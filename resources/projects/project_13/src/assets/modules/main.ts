@@ -10,7 +10,7 @@ class App {
   private camera: THREE.PerspectiveCamera;
   private light: THREE.PointLight;
   private renderer: THREE.WebGLRenderer;
-  private axis: THREE.AxesHelper;
+  // private axis: THREE.AxesHelper;
   private controls: OrbitControls;
   private resizer: Resizer;
   private gui: void;
