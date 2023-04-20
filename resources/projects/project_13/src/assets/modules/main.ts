@@ -7,6 +7,7 @@ import { setGui } from "./Gui";
 import roomAreaMtl from "../roomArea/roomArea.mtl?url";
 import roomAreaJpg from "../roomArea/roomArea.jpg";
 import roomAreaObj from "../roomArea/roomArea.obj?url";
+import { Mp3Player } from "./Button";
 
 class App {
   private canvas: HTMLElement;
@@ -122,3 +123,4 @@ class App {
 }
 
 new App();
+new Mp3Player();

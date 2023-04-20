@@ -21,6 +21,9 @@ export default {
           if (/png|jpg|jpeg|svg|gif|tiff|bmp|ico/i.test(extType)) {
             extType = "img";
           }
+          if (/mp3/i.test(extType)) {
+            extType = "media";
+          }
           if (/mtl|obj/i.test(extType)) {
             extType = "roomArea";
           }
