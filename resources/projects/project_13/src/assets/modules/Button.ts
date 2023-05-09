@@ -1,4 +1,4 @@
-import guideMp3 from "../media/guide.mp3?url";
+import guideMp3 from '../media/guide.mp3?url';
 export class Mp3Player {
   private button: HTMLElement;
   private audio: HTMLAudioElement;
@@ -6,7 +6,7 @@ export class Mp3Player {
 
   constructor() {
     this.audio = new Audio();
-    this.button = document.getElementById("button") as HTMLElement;
+    this.button = document.getElementById('button') as HTMLElement;
     this.bind();
     this.isPlay = false;
   }
@@ -24,7 +24,7 @@ export class Mp3Player {
   }
 
   private bind() {
-    this.button.addEventListener("click", () => {
+    this.button.addEventListener('click', () => {
       this.playMp3File();
     });
   }

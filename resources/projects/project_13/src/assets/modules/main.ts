@@ -2,12 +2,11 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
-import { Resizer } from './Resizer';
-import { setGui } from './Gui';
-import roomAreaMtl from '../roomArea/roomArea.mtl?url';
 import roomAreaJpg from '../roomArea/roomArea.jpg';
+import roomAreaMtl from '../roomArea/roomArea.mtl?url';
 import roomAreaObj from '../roomArea/roomArea.obj?url';
 import { Mp3Player } from './Button';
+import { Resizer } from './Resizer';
 
 class App {
   private canvas: HTMLElement;
