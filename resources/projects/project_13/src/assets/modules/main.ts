@@ -1,13 +1,13 @@
-import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader.js";
-import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader.js";
-import { Resizer } from "./Resizer";
-import { setGui } from "./Gui";
-import roomAreaMtl from "../roomArea/roomArea.mtl?url";
-import roomAreaJpg from "../roomArea/roomArea.jpg";
-import roomAreaObj from "../roomArea/roomArea.obj?url";
-import { Mp3Player } from "./Button";
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js';
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
+import { Resizer } from './Resizer';
+import { setGui } from './Gui';
+import roomAreaMtl from '../roomArea/roomArea.mtl?url';
+import roomAreaJpg from '../roomArea/roomArea.jpg';
+import roomAreaObj from '../roomArea/roomArea.obj?url';
+import { Mp3Player } from './Button';
 
 class App {
   private canvas: HTMLElement;
@@ -28,7 +28,7 @@ class App {
   private easing = 0.002;
 
   constructor() {
-    this.canvas = document.getElementById("canvas") as HTMLElement;
+    this.canvas = document.getElementById('canvas') as HTMLElement;
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0x000000);
 
