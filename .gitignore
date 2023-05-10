@@ -23,7 +23,7 @@ yarn.lock
 
 # IDEやエディタによる設定ファイル
 .idea
-.vscode
+# .vscode
 *.sublime-*
 
 # テストファイル

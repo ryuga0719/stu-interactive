@@ -2,5 +2,8 @@
   "tabWidth": 2,
   "insertPragma": false,
   "singleQuote": true,
-  "endOfLine": "lf"
+  "endOfLine": "lf",
+  "arrowParens": "avoid",
+  "trailingComma": "none",
+  "printWidth": 80
 }
