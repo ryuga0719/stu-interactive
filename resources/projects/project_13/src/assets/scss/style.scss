@@ -1,4 +1,4 @@
-@use "../../../../../shared/scss/reset-latest";
+@use '../../../../../shared/scss/reset-latest';
 
 body {
   position: relative;
@@ -7,31 +7,29 @@ body {
 }
 
 .canvas {
-  width: 100vw;
-  height: 100vh;
   position: fixed;
   z-index: 10;
+  width: 100vw;
+  height: 100vh;
 }
 
 .button {
   position: absolute;
   right: 1vw;
   bottom: 1vw;
-  color: #fff;
   z-index: 20;
+  padding: 10px 20px;
+  color: #fff;
   background: transparent;
   border: 1px solid #aaa;
-  padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 0;
   outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   transition: 0.3s;
+  appearance: none;
   &:hover {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgb(255, 255, 255, 50%);
   }
   &:active {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgb(255, 255, 255, 20%);
   }
 }

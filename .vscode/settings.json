@@ -1,4 +1,17 @@
 {
+  "cSpell.enabled": true,
+  "cSpell.words": [
+    "stylelint",
+    "astro"
+  ],
+  "cSpell.ignorePaths": [
+    "**/node_modules/*/**",
+    "**/.vscode/**",
+    "*.json",
+  ],
+  "cSpell.ignoreRegExpList": [
+    "[０-９Ａ-Ｚａ-ｚぁ-んァ-ヶ亜-熙纊-黑]+"
+  ],
   "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.insertSpaces": true,
@@ -31,7 +44,8 @@
     "html",
     "css",
     "scss",
-    "vue"
+    "vue",
+    "astro"
   ],
   "todohighlight.keywords": [
     {
