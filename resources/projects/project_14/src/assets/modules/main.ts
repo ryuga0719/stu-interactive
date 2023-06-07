@@ -80,6 +80,7 @@ class App {
   animate(): void {
     const elem = document.getElementsByClassName('spiral-number');
     let cnt = 0;
+    const speed = 50;
     setInterval(() => {
       if (cnt === elem.length) {
         cnt = 0;
@@ -91,8 +92,34 @@ class App {
           elem[i].classList.remove('active');
         }
       }
+      this.setRandomColor();
       cnt++;
-    }, 50);
+    }, speed);
+  }
+
+  setRandomColor() {
+    const colors = [
+      '#ff0000',
+      '#ff007f',
+      '#ff00ff',
+      '#7f00ff',
+      '#0000ff',
+      '#007fff',
+      '#00ffff',
+      '#00ff7f',
+      '#00ff00',
+      '#7fff00',
+      '#ffff00',
+      '#ff7f00'
+    ];
+    const randomIndex = Math.floor(Math.random() * colors.length);
+
+    const element = document.querySelector(
+      '.spiral-number.active'
+    ) as HTMLElement;
+    if (element) {
+      element.style.setProperty('--color', colors[randomIndex]);
+    }
   }
 }
 

@@ -40,7 +40,9 @@ body {
   width: 40px;
   height: 40px;
   &.active {
-    background-color: #0f0;
+    --color: #0f0;
+
+    background-color: var(--color);
     filter: blur(5px);
     border-radius: 9999px;
   }
